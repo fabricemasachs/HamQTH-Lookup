@@ -315,9 +315,7 @@
             [self presentViewController:alert animated:YES completion:nil];
         }
     }
-    
-    NSLog(@"Node Content = %@", nodeContent);
-    
+        
     nodeContent = nil;
     nodeContent = [[NSMutableString alloc] init];
 }
