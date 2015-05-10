@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		7B71F5E71AFFB46800A48BB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F5E61AFFB46800A48BB7 /* main.m */; };
 		7B71F5EA1AFFB46800A48BB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F5E91AFFB46800A48BB7 /* AppDelegate.m */; };
-		7B71F5ED1AFFB46800A48BB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F5EC1AFFB46800A48BB7 /* ViewController.m */; };
 		7B71F5F01AFFB46800A48BB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B71F5EE1AFFB46800A48BB7 /* Main.storyboard */; };
 		7B71F5F21AFFB46800A48BB7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B71F5F11AFFB46800A48BB7 /* Images.xcassets */; };
 		7B71F5F51AFFB46800A48BB7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B71F5F31AFFB46800A48BB7 /* LaunchScreen.xib */; };
 		7B71F6011AFFB46800A48BB7 /* HamQTH_LookupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6001AFFB46800A48BB7 /* HamQTH_LookupTests.m */; };
+		7B71F60C1AFFB73400A48BB7 /* HamQTHLookupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F60B1AFFB73400A48BB7 /* HamQTHLookupViewController.m */; };
+		7B71F6121AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6111AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m */; };
+		7B71F6151AFFB7A200A48BB7 /* HamQTH.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6141AFFB7A200A48BB7 /* HamQTH.m */; };
+		7B71F6191AFFC05300A48BB7 /* HamQTHSettingInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6181AFFC05300A48BB7 /* HamQTHSettingInformationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +35,21 @@
 		7B71F5E61AFFB46800A48BB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7B71F5E81AFFB46800A48BB7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7B71F5E91AFFB46800A48BB7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7B71F5EB1AFFB46800A48BB7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7B71F5EC1AFFB46800A48BB7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7B71F5EF1AFFB46800A48BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B71F5F11AFFB46800A48BB7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7B71F5F41AFFB46800A48BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7B71F5FA1AFFB46800A48BB7 /* HamQTH LookupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HamQTH LookupTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B71F5FF1AFFB46800A48BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B71F6001AFFB46800A48BB7 /* HamQTH_LookupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HamQTH_LookupTests.m; sourceTree = "<group>"; };
+		7B71F60A1AFFB73400A48BB7 /* HamQTHLookupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamQTHLookupViewController.h; sourceTree = "<group>"; };
+		7B71F60B1AFFB73400A48BB7 /* HamQTHLookupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamQTHLookupViewController.m; sourceTree = "<group>"; };
+		7B71F6101AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamQTHLookupResultTableViewController.h; sourceTree = "<group>"; };
+		7B71F6111AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamQTHLookupResultTableViewController.m; sourceTree = "<group>"; };
+		7B71F6131AFFB7A200A48BB7 /* HamQTH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamQTH.h; sourceTree = "<group>"; };
+		7B71F6141AFFB7A200A48BB7 /* HamQTH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamQTH.m; sourceTree = "<group>"; };
+		7B71F6161AFFB8E600A48BB7 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		7B71F6171AFFC05300A48BB7 /* HamQTHLoginSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamQTHLoginSettingViewController.h; sourceTree = "<group>"; };
+		7B71F6181AFFC05300A48BB7 /* HamQTHSettingInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamQTHSettingInformationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +93,15 @@
 			children = (
 				7B71F5E81AFFB46800A48BB7 /* AppDelegate.h */,
 				7B71F5E91AFFB46800A48BB7 /* AppDelegate.m */,
-				7B71F5EB1AFFB46800A48BB7 /* ViewController.h */,
-				7B71F5EC1AFFB46800A48BB7 /* ViewController.m */,
+				7B71F6161AFFB8E600A48BB7 /* Macros.h */,
+				7B71F6131AFFB7A200A48BB7 /* HamQTH.h */,
+				7B71F6141AFFB7A200A48BB7 /* HamQTH.m */,
+				7B71F6171AFFC05300A48BB7 /* HamQTHLoginSettingViewController.h */,
+				7B71F6181AFFC05300A48BB7 /* HamQTHSettingInformationViewController.m */,
+				7B71F60A1AFFB73400A48BB7 /* HamQTHLookupViewController.h */,
+				7B71F60B1AFFB73400A48BB7 /* HamQTHLookupViewController.m */,
+				7B71F6101AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.h */,
+				7B71F6111AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m */,
 				7B71F5EE1AFFB46800A48BB7 /* Main.storyboard */,
 				7B71F5F11AFFB46800A48BB7 /* Images.xcassets */,
 				7B71F5F31AFFB46800A48BB7 /* LaunchScreen.xib */,
@@ -219,9 +236,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B71F5ED1AFFB46800A48BB7 /* ViewController.m in Sources */,
 				7B71F5EA1AFFB46800A48BB7 /* AppDelegate.m in Sources */,
+				7B71F6151AFFB7A200A48BB7 /* HamQTH.m in Sources */,
+				7B71F6191AFFC05300A48BB7 /* HamQTHSettingInformationViewController.m in Sources */,
 				7B71F5E71AFFB46800A48BB7 /* main.m in Sources */,
+				7B71F6121AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m in Sources */,
+				7B71F60C1AFFB73400A48BB7 /* HamQTHLookupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +438,7 @@
 				7B71F6061AFFB46800A48BB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B71F6071AFFB46800A48BB7 /* Build configuration list for PBXNativeTarget "HamQTH LookupTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +447,7 @@
 				7B71F6091AFFB46800A48BB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
