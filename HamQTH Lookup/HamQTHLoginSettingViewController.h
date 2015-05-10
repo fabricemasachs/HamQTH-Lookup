@@ -14,9 +14,9 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (strong, nonatomic) IBOutlet UILabel *joinHamQTHLabel;
 
 - (IBAction)cancelButtonAction:(id)sender;
 - (IBAction)saveButtonAction:(id)sender;
-
 
 @end

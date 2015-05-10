@@ -16,7 +16,7 @@
 		7B71F60C1AFFB73400A48BB7 /* HamQTHLookupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F60B1AFFB73400A48BB7 /* HamQTHLookupViewController.m */; };
 		7B71F6121AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6111AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m */; };
 		7B71F6151AFFB7A200A48BB7 /* HamQTH.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6141AFFB7A200A48BB7 /* HamQTH.m */; };
-		7B71F6191AFFC05300A48BB7 /* HamQTHSettingInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6181AFFC05300A48BB7 /* HamQTHSettingInformationViewController.m */; };
+		7B71F6191AFFC05300A48BB7 /* HamQTHLoginSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6181AFFC05300A48BB7 /* HamQTHLoginSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		7B71F6141AFFB7A200A48BB7 /* HamQTH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamQTH.m; sourceTree = "<group>"; };
 		7B71F6161AFFB8E600A48BB7 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		7B71F6171AFFC05300A48BB7 /* HamQTHLoginSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamQTHLoginSettingViewController.h; sourceTree = "<group>"; };
-		7B71F6181AFFC05300A48BB7 /* HamQTHSettingInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamQTHSettingInformationViewController.m; sourceTree = "<group>"; };
+		7B71F6181AFFC05300A48BB7 /* HamQTHLoginSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamQTHLoginSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 				7B71F6131AFFB7A200A48BB7 /* HamQTH.h */,
 				7B71F6141AFFB7A200A48BB7 /* HamQTH.m */,
 				7B71F6171AFFC05300A48BB7 /* HamQTHLoginSettingViewController.h */,
-				7B71F6181AFFC05300A48BB7 /* HamQTHSettingInformationViewController.m */,
+				7B71F6181AFFC05300A48BB7 /* HamQTHLoginSettingViewController.m */,
 				7B71F60A1AFFB73400A48BB7 /* HamQTHLookupViewController.h */,
 				7B71F60B1AFFB73400A48BB7 /* HamQTHLookupViewController.m */,
 				7B71F6101AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.h */,
@@ -255,7 +255,7 @@
 			files = (
 				7B71F5EA1AFFB46800A48BB7 /* AppDelegate.m in Sources */,
 				7B71F6151AFFB7A200A48BB7 /* HamQTH.m in Sources */,
-				7B71F6191AFFC05300A48BB7 /* HamQTHSettingInformationViewController.m in Sources */,
+				7B71F6191AFFC05300A48BB7 /* HamQTHLoginSettingViewController.m in Sources */,
 				7B71F5E71AFFB46800A48BB7 /* main.m in Sources */,
 				7B71F6121AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m in Sources */,
 				7B71F60C1AFFB73400A48BB7 /* HamQTHLookupViewController.m in Sources */,

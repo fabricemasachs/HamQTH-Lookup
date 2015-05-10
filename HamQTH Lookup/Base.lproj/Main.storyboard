@@ -63,6 +63,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not registered, yet? Join HamQTH!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgb-ni-deg">
+                                <rect key="frame" x="166" y="571" width="269" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -70,6 +76,7 @@
                             <constraint firstItem="lkA-NY-6W8" firstAttribute="top" secondItem="h6P-19-JyW" secondAttribute="bottom" constant="8" symbolic="YES" id="7hj-2P-lgC"/>
                             <constraint firstItem="u59-E6-mwP" firstAttribute="trailing" secondItem="h6P-19-JyW" secondAttribute="trailing" id="EC8-Vu-756"/>
                             <constraint firstItem="u59-E6-mwP" firstAttribute="trailing" secondItem="b0Y-hS-lfW" secondAttribute="trailing" id="Fyn-Ya-Yz2"/>
+                            <constraint firstItem="HkG-xA-6cv" firstAttribute="top" secondItem="Wgb-ni-deg" secondAttribute="bottom" constant="8" symbolic="YES" id="JdA-Cz-7XG"/>
                             <constraint firstItem="uJz-Om-Gb7" firstAttribute="top" secondItem="u59-E6-mwP" secondAttribute="bottom" constant="8" symbolic="YES" id="VKS-S2-EoJ"/>
                             <constraint firstItem="u59-E6-mwP" firstAttribute="top" secondItem="lkA-NY-6W8" secondAttribute="bottom" constant="8" symbolic="YES" id="W3b-NM-UOn"/>
                             <constraint firstItem="u59-E6-mwP" firstAttribute="leading" secondItem="uJz-Om-Gb7" secondAttribute="leading" id="bJ3-tJ-I1Z"/>
@@ -77,6 +84,7 @@
                             <constraint firstItem="u59-E6-mwP" firstAttribute="leading" secondItem="lkA-NY-6W8" secondAttribute="leading" id="g2F-LP-eax"/>
                             <constraint firstItem="b0Y-hS-lfW" firstAttribute="leading" secondItem="uJz-Om-Gb7" secondAttribute="leading" id="hlI-T2-gJT"/>
                             <constraint firstItem="h6P-19-JyW" firstAttribute="leading" secondItem="lkA-NY-6W8" secondAttribute="leading" id="iUU-wB-W1x"/>
+                            <constraint firstItem="Wgb-ni-deg" firstAttribute="centerX" secondItem="b0Y-hS-lfW" secondAttribute="centerX" id="kkr-Qp-Rsy"/>
                             <constraint firstItem="uJz-Om-Gb7" firstAttribute="leading" secondItem="b1V-dO-soI" secondAttribute="leadingMargin" id="rA8-Mw-vt9"/>
                             <constraint firstItem="h6P-19-JyW" firstAttribute="top" secondItem="bmd-TR-iv5" secondAttribute="bottom" constant="8" symbolic="YES" id="wSA-Nm-PAn"/>
                         </constraints>
@@ -95,6 +103,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="BYD-U5-LEq" id="E21-Us-bYv"/>
+                        <outlet property="joinHamQTHLabel" destination="Wgb-ni-deg" id="Asn-eL-zuW"/>
                         <outlet property="passwordTextField" destination="b0Y-hS-lfW" id="CoI-dD-x3O"/>
                         <outlet property="saveButton" destination="iaz-8N-EjU" id="0Ic-uP-BWf"/>
                         <outlet property="usernameTextField" destination="u59-E6-mwP" id="jMo-Zw-mR2"/>

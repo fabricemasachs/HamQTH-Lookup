@@ -27,6 +27,13 @@
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
+    
+    self.joinHamQTHLabel.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *joinHamQth = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(joinHamQthAction:)];
+    [self.joinHamQTHLabel addGestureRecognizer:joinHamQth];
+    joinHamQth.numberOfTapsRequired = 1;
+    joinHamQth.cancelsTouchesInView = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,6 +67,11 @@
     [userSettings synchronize];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)joinHamQthAction:(UITapGestureRecognizer *)joinHamQth {
+    NSString *launchUrl = @"http://www.hamqth.com/register.php";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:launchUrl]];
 }
 
 @end
