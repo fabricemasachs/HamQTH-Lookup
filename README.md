@@ -2,7 +2,6 @@
 HamQTH Callbook Query Search
 
 ## Licence
-
 HamQTH Lookup is available under the MIT License.
 
 Copyright (c) 2015 Fabrice Masachs, OH6FKO.
