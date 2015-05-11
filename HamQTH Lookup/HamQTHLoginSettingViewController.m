@@ -38,6 +38,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
@@ -45,6 +46,24 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSUserDefaults *userSettings = [NSUserDefaults standardUserDefaults];
+    
+    if ([self.usernameTextField.text isEqualToString:@""]) {
+        [userSettings removeObjectForKey:@"hamQthUsernameKey"];
+        [userSettings synchronize];
+    } else {
+        [userSettings setObject:self.usernameTextField.text forKey:@"hamQthUsernameKey"];
+        [userSettings synchronize];
+    }
+    
+    if ([self.passwordTextField.text isEqualToString:@""]) {
+        [userSettings removeObjectForKey:@"hamQthPasswordKey"];
+        [userSettings synchronize];
+    } else {
+        [userSettings setObject:self.passwordTextField.text forKey:@"hamQthPasswordKey"];
+        [userSettings synchronize];
+    }
+    
     [self.usernameTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
 }

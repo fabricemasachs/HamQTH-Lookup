@@ -62,7 +62,7 @@
         
         NSLog(@"New session ID in %.0fmin", 60 - (timeOfTheSessionIdAsked / 60));
         NSLog(@"First session ID asked at %@",[formatter stringFromDate:sessionIdDate]);
-        NSLog(@"Session ID = %@", sessionId);
+        NSLog(@"Session ID: %@", sessionId);
         
         NSString *urlString = [NSString stringWithFormat:@"http://www.hamqth.com/xml.php?id=%@&callsign=%@&prg=HamQTH-Lookup", sessionId, callsign];
         
@@ -96,6 +96,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)getSessionId {
@@ -140,7 +141,7 @@
         [userSettings setObject:sessionId forKey:@"hamQthSessionIdKey"];
         [userSettings synchronize];
         
-        NSLog(@"Session ID = %@", nodeContent);
+        NSLog(@"Session ID: %@", nodeContent);
     } else if ([elementName isEqualToString:@"error"]) {
         sessionError = nodeContent;
     }
@@ -149,145 +150,145 @@
         
     } else if ([elementName isEqualToString:@"callsign"]) {
         hamQTH.callsign = nodeContent;
-        NSLog(@"Callsign = %@", [nodeContent uppercaseString]);
+        NSLog(@"Callsign: %@", [nodeContent uppercaseString]);
     } else if ([elementName isEqualToString:@"nick"]) {
         hamQTH.nick = nodeContent;
-        NSLog(@"Nick = %@", nodeContent);
+        NSLog(@"Nick: %@", nodeContent);
     } else if ([elementName isEqualToString:@"qth"]) {
         hamQTH.qth = nodeContent;
-        NSLog(@"QTH = %@", nodeContent);
+        NSLog(@"QTH: %@", nodeContent);
     } else if ([elementName isEqualToString:@"country"]) {
         hamQTH.country = nodeContent;
-        NSLog(@"Country = %@", nodeContent);
+        NSLog(@"Country: %@", nodeContent);
     } else if ([elementName isEqualToString:@"adif"]) {
         hamQTH.adif = nodeContent;
-        NSLog(@"ADIF = %@", nodeContent);
+        NSLog(@"ADIF: %@", nodeContent);
     } else if ([elementName isEqualToString:@"itu"]) {
         hamQTH.itu = nodeContent;
-        NSLog(@"ITU = %@", nodeContent);
+        NSLog(@"ITU: %@", nodeContent);
     } else if ([elementName isEqualToString:@"cq"]) {
         hamQTH.cq = nodeContent;
-        NSLog(@"CQ = %@", nodeContent);
+        NSLog(@"CQ: %@", nodeContent);
     } else if ([elementName isEqualToString:@"grid"]) {
         hamQTH.grid = nodeContent;
-        NSLog(@"Grid = %@", nodeContent);
+        NSLog(@"Grid: %@", nodeContent);
     } else if ([elementName isEqualToString:@"adr_name"]) {
         hamQTH.adr_name = nodeContent;
-        NSLog(@"Address Name = %@", nodeContent);
+        NSLog(@"Address Name: %@", nodeContent);
     } else if ([elementName isEqualToString:@"adr_street1"]) {
         hamQTH.adr_street1 = nodeContent;
-        NSLog(@"Address Street 1 = %@", nodeContent);
+        NSLog(@"Address Street 1: %@", nodeContent);
     } else if ([elementName isEqualToString:@"adr_street2"]) {
         hamQTH.adr_street2 = nodeContent;
-        NSLog(@"Address Street 2 = %@", nodeContent);
+        NSLog(@"Address Street 2: %@", nodeContent);
     } else if ([elementName isEqualToString:@"adr_street3"]) {
         hamQTH.adr_street3 = nodeContent;
-        NSLog(@"Address Street 3 = %@", nodeContent);
+        NSLog(@"Address Street 3: %@", nodeContent);
     } else if ([elementName isEqualToString:@"adr_city"]) {
         hamQTH.adr_city = nodeContent;
-        NSLog(@"Address City = %@", nodeContent);
+        NSLog(@"Address City: %@", nodeContent);
     } else if ([elementName isEqualToString:@"adr_zip"]) {
         hamQTH.adr_zip = nodeContent;
-        NSLog(@"Address Zip = %@", nodeContent);
+        NSLog(@"Address Zip: %@", nodeContent);
     } else if ([elementName isEqualToString:@"adr_country"]) {
         hamQTH.adr_country = nodeContent;
-        NSLog(@"Address Country = %@", nodeContent);
+        NSLog(@"Address Country: %@", nodeContent);
     } else if ([elementName isEqualToString:@"adr_adif"]) {
         hamQTH.adr_adif = nodeContent;
-        NSLog(@"Address ADIF = %@", nodeContent);
+        NSLog(@"Address ADIF: %@", nodeContent);
     } else if ([elementName isEqualToString:@"district"]) {
         hamQTH.district = nodeContent;
-        NSLog(@"Address District = %@", nodeContent);
+        NSLog(@"Address District: %@", nodeContent);
     } else if ([elementName isEqualToString:@"us_state"]) {
         hamQTH.us_state = nodeContent;
-        NSLog(@"US State = %@", nodeContent);
+        NSLog(@"US State: %@", nodeContent);
     } else if ([elementName isEqualToString:@"us_county"]) {
         hamQTH.us_county = nodeContent;
-        NSLog(@"US County = %@", nodeContent);
+        NSLog(@"US County: %@", nodeContent);
     } else if ([elementName isEqualToString:@"oblast"]) {
         hamQTH.oblast = nodeContent;
-        NSLog(@"Oblast = %@", nodeContent);
+        NSLog(@"Oblast: %@", nodeContent);
     } else if ([elementName isEqualToString:@"dok"]) {
         hamQTH.dok = nodeContent;
-        NSLog(@"DOK = %@", nodeContent);
+        NSLog(@"DOK: %@", nodeContent);
     } else if ([elementName isEqualToString:@"iota"]) {
         hamQTH.iota = nodeContent;
-        NSLog(@"IOTA = %@", nodeContent);
+        NSLog(@"IOTA: %@", nodeContent);
     } else if ([elementName isEqualToString:@"qsl_via"]) {
         hamQTH.qsl_via = nodeContent;
-        NSLog(@"QSL Via = %@", nodeContent);
+        NSLog(@"QSL Via: %@", nodeContent);
     } else if ([elementName isEqualToString:@"lotw"]) {
-        hamQTH.lotw= nodeContent;
-        NSLog(@"LOTW = %@", nodeContent);
+        hamQTH.lotw = nodeContent;
+        NSLog(@"LOTW: %@", nodeContent);
     } else if ([elementName isEqualToString:@"eqsl"]) {
-        hamQTH.eqsl= nodeContent;
-        NSLog(@"eQSL = %@", nodeContent);
+        hamQTH.eqsl = nodeContent;
+        NSLog(@"eQSL: %@", nodeContent);
     } else if ([elementName isEqualToString:@"qsl"]) {
         hamQTH.qsl = nodeContent;
-        NSLog(@"QSL Bureau = %@", nodeContent);
+        NSLog(@"QSL Bureau: %@", nodeContent);
     } else if ([elementName isEqualToString:@"qsldirect"]) {
         hamQTH.qsldirect = nodeContent;
-        NSLog(@"QSL Direct = %@", nodeContent);
+        NSLog(@"QSL Direct: %@", nodeContent);
     } else if ([elementName isEqualToString:@"email"]) {
         hamQTH.email = nodeContent;
-        NSLog(@"Email = %@", nodeContent);
+        NSLog(@"Email: %@", nodeContent);
     } else if ([elementName isEqualToString:@"jabber"]) {
         hamQTH.jabber = nodeContent;
-        NSLog(@"Jabber = %@", nodeContent);
+        NSLog(@"Jabber: %@", nodeContent);
     } else if ([elementName isEqualToString:@"icq"]) {
         hamQTH.icq = nodeContent;
-        NSLog(@"ICQ = %@", nodeContent);
+        NSLog(@"ICQ: %@", nodeContent);
     } else if ([elementName isEqualToString:@"msn"]) {
         hamQTH.msn = nodeContent;
-        NSLog(@"MSN = %@", nodeContent);
+        NSLog(@"MSN: %@", nodeContent);
     } else if ([elementName isEqualToString:@"skype"]) {
         hamQTH.skype = nodeContent;
-        NSLog(@"Skype = %@", nodeContent);
+        NSLog(@"Skype: %@", nodeContent);
     } else if ([elementName isEqualToString:@"birth_year"]) {
         hamQTH.birth_year = nodeContent;
-        NSLog(@"Year of birth = %@", nodeContent);
+        NSLog(@"Year of birth: %@", nodeContent);
     } else if ([elementName isEqualToString:@"lic_year"]) {
         hamQTH.lic_year = nodeContent;
-        NSLog(@"Licenced since = %@", nodeContent);
+        NSLog(@"Licenced since: %@", nodeContent);
     } else if ([elementName isEqualToString:@"web"]) {
         hamQTH.web = nodeContent;
-        NSLog(@"Website = %@", nodeContent);
+        NSLog(@"Website: %@", nodeContent);
     } else if ([elementName isEqualToString:@"picture"]) {
         hamQTH.picture = nodeContent;
-        NSLog(@"Picture Link = %@", nodeContent);
+        NSLog(@"Picture Link: %@", nodeContent);
     } else if ([elementName isEqualToString:@"latitude"]) {
         hamQTH.latitude = nodeContent;
-        NSLog(@"Latitude = %@", nodeContent);
+        NSLog(@"Latitude: %@", nodeContent);
     } else if ([elementName isEqualToString:@"longitude"]) {
         hamQTH.longitude = nodeContent;
-        NSLog(@"Longitude = %@", nodeContent);
+        NSLog(@"Longitude: %@", nodeContent);
     } else if ([elementName isEqualToString:@"continent"]) {
         hamQTH.continent = nodeContent;
-        NSLog(@"Continent = %@", nodeContent);
+        NSLog(@"Continent: %@", nodeContent);
     } else if ([elementName isEqualToString:@"utc_offset"]) {
         hamQTH.utc_offset = nodeContent;
-        NSLog(@"UTC Offset = %@", nodeContent);
+        NSLog(@"UTC Offset: %@", nodeContent);
     } else if ([elementName isEqualToString:@"facebook"]) {
         hamQTH.facebook = nodeContent;
-        NSLog(@"Facebook = %@", nodeContent);
+        NSLog(@"Facebook: %@", nodeContent);
     } else if ([elementName isEqualToString:@"twitter"]) {
         hamQTH.twitter = nodeContent;
-        NSLog(@"Twitter= %@", nodeContent);
+        NSLog(@"Twitter: %@", nodeContent);
     } else if ([elementName isEqualToString:@"gplus"]) {
         hamQTH.gplus = nodeContent;
-        NSLog(@"Google+ = %@", nodeContent);
+        NSLog(@"Google+: %@", nodeContent);
     } else if ([elementName isEqualToString:@"youtube"]) {
         hamQTH.youtube = nodeContent;
-        NSLog(@"Youtube = %@", nodeContent);
+        NSLog(@"Youtube: %@", nodeContent);
     } else if ([elementName isEqualToString:@"linkedin"]) {
         hamQTH.linkedin = nodeContent;
-        NSLog(@"Linkedin = %@", nodeContent);
+        NSLog(@"Linkedin: %@", nodeContent);
     } else if ([elementName isEqualToString:@"flicker"]) {
         hamQTH.flicker = nodeContent;
-        NSLog(@"Flickr = %@", nodeContent);
+        NSLog(@"Flickr: %@", nodeContent);
     } else if ([elementName isEqualToString:@"vimeo"]) {
         hamQTH.vimeo = nodeContent;
-        NSLog(@"Vimeo = %@", nodeContent);
+        NSLog(@"Vimeo: %@", nodeContent);
     }
     
     if ([elementName isEqualToString:@"search"]) {
@@ -331,10 +332,12 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
     return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
     NSInteger numberofRows = 0;
     
     if (section == 0) {

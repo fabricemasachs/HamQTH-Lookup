@@ -13,7 +13,6 @@
 @interface HamQTHLookupResultTableViewController : UITableViewController <NSXMLParserDelegate, MFMailComposeViewControllerDelegate>
 
 @property (retain, nonatomic) NSString *callsign;
-@property (strong, nonatomic) UIBarButtonItem *lookupBarButtonItem;
 @property (strong, nonatomic) NSMutableArray *lookupOutputArray;
 @property (strong, nonatomic) NSMutableString *nodeContent;
 @property (strong, nonatomic) NSXMLParser *xmlParser;

@@ -24,11 +24,11 @@
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
-    //[self.searchButton addGestureRecognizer:gestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)loginInformationButtonAction:(id)sender {
@@ -41,7 +41,7 @@
     
     if (self.callsignToSearchTextField.text.length >= 3) {
         [self.callsignToSearchTextField endEditing:YES];
-        [self performSegueWithIdentifier:@"showLookupResultTableViewController" sender:self];
+        [self performSegueWithIdentifier:@"showHamQTHLookupResultTableViewController" sender:self];
     } else {
         
     }
@@ -78,7 +78,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showLookupResultTableViewController"]) {
+    if ([segue.identifier isEqualToString:@"showHamQTHLookupResultTableViewController"]) {
         HamQTHLookupResultTableViewController *viewController = (HamQTHLookupResultTableViewController *)segue.destinationViewController;
         viewController.callsign = self.callsignToSearch;
     }
