@@ -10,13 +10,13 @@
 
 @interface HamQTHLoginSettingViewController : UIViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *cancelButtonItem;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButtonItem;
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (strong, nonatomic) IBOutlet UILabel *joinHamQTHLabel;
 
-- (IBAction)cancelButtonAction:(id)sender;
-- (IBAction)saveButtonAction:(id)sender;
+- (IBAction)cancelButtonItemAction:(id)sender;
+- (IBAction)saveButtonItemAction:(id)sender;
 
 @end

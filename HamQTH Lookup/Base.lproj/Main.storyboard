@@ -98,20 +98,20 @@
                     <navigationItem key="navigationItem" title="HamQTH Login Setting" id="HaF-W9-Sqm">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BYD-U5-LEq">
                             <connections>
-                                <action selector="cancelButtonAction:" destination="Oub-4H-TrP" id="Fll-G6-Lhn"/>
+                                <action selector="cancelButtonItemAction:" destination="Oub-4H-TrP" id="d2R-Al-3qm"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="iaz-8N-EjU">
                             <connections>
-                                <action selector="saveButtonAction:" destination="Oub-4H-TrP" id="Odl-cX-3Rt"/>
+                                <action selector="saveButtonItemAction:" destination="Oub-4H-TrP" id="9kF-FW-BqB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="BYD-U5-LEq" id="E21-Us-bYv"/>
+                        <outlet property="cancelButtonItem" destination="BYD-U5-LEq" id="LaV-fT-Sfg"/>
                         <outlet property="joinHamQTHLabel" destination="Wgb-ni-deg" id="Asn-eL-zuW"/>
                         <outlet property="passwordTextField" destination="b0Y-hS-lfW" id="CoI-dD-x3O"/>
-                        <outlet property="saveButton" destination="iaz-8N-EjU" id="0Ic-uP-BWf"/>
+                        <outlet property="saveButtonItem" destination="iaz-8N-EjU" id="G1c-FY-5Ka"/>
                         <outlet property="usernameTextField" destination="u59-E6-mwP" id="jMo-Zw-mR2"/>
                     </connections>
                 </viewController>

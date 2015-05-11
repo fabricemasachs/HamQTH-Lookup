@@ -73,11 +73,11 @@
     [self.passwordTextField endEditing:YES];
 }
 
-- (IBAction)cancelButtonAction:(id)sender {
+- (IBAction)cancelButtonItemAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)saveButtonAction:(id)sender {
+- (IBAction)saveButtonItemAction:(id)sender {
     NSUserDefaults *userSettings = [NSUserDefaults standardUserDefaults];
     
     [userSettings setObject:self.usernameTextField.text forKey:@"hamQthUsernameKey"];

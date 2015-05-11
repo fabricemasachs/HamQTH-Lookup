@@ -74,11 +74,11 @@
     } else {
         if (![[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthUsernameKey"] || ![[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthPasswordKey"]) {
             if (IS_OS_7_OR_EARLIER) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Enter your HamQTH Login Information in settings." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Enter your HamQTH Login Information in setting." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 
                 [alertView show];
             } else {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Enter your HamQTH Login Information in settings." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Enter your HamQTH Login Information in setting." preferredStyle:UIAlertControllerStyleAlert];
                 
                 UIAlertAction *ok= [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                     [alert dismissViewControllerAnimated:YES completion:nil];
