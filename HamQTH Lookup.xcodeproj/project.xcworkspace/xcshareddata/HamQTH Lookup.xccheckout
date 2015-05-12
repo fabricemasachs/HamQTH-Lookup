@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>088864DB-74F6-4A5B-BC8F-E3B3071E3D74</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HamQTH Lookup</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9640C7DF02CE5494900A21BF8B674880E71FD7DD</key>
+		<string>https://github.com/fabricemasachs/HamQTH-Lookup.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HamQTH Lookup.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9640C7DF02CE5494900A21BF8B674880E71FD7DD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/fabricemasachs/HamQTH-Lookup.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9640C7DF02CE5494900A21BF8B674880E71FD7DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9640C7DF02CE5494900A21BF8B674880E71FD7DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HamQTH%20Lookup</string>
+		</dict>
+	</array>
+</dict>
+</plist>
