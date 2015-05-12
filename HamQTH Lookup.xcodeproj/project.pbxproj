@@ -17,6 +17,7 @@
 		7B71F6121AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6111AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m */; };
 		7B71F6151AFFB7A200A48BB7 /* HamQTH.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6141AFFB7A200A48BB7 /* HamQTH.m */; };
 		7B71F6191AFFC05300A48BB7 /* HamQTHLoginSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B71F6181AFFC05300A48BB7 /* HamQTHLoginSettingViewController.m */; };
+		7BC4433F1B02A5B400BF2865 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4433E1B02A5B400BF2865 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		7B71F6161AFFB8E600A48BB7 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		7B71F6171AFFC05300A48BB7 /* HamQTHLoginSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamQTHLoginSettingViewController.h; sourceTree = "<group>"; };
 		7B71F6181AFFC05300A48BB7 /* HamQTHLoginSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamQTHLoginSettingViewController.m; sourceTree = "<group>"; };
+		7BC4433D1B02A5B400BF2865 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		7BC4433E1B02A5B400BF2865 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				7B71F5E81AFFB46800A48BB7 /* AppDelegate.h */,
 				7B71F5E91AFFB46800A48BB7 /* AppDelegate.m */,
 				7B71F6161AFFB8E600A48BB7 /* Macros.h */,
+				7BC4433D1B02A5B400BF2865 /* Reachability.h */,
+				7BC4433E1B02A5B400BF2865 /* Reachability.m */,
 				7B71F6131AFFB7A200A48BB7 /* HamQTH.h */,
 				7B71F6141AFFB7A200A48BB7 /* HamQTH.m */,
 				7B71F6171AFFC05300A48BB7 /* HamQTHLoginSettingViewController.h */,
@@ -256,6 +261,7 @@
 				7B71F5EA1AFFB46800A48BB7 /* AppDelegate.m in Sources */,
 				7B71F6151AFFB7A200A48BB7 /* HamQTH.m in Sources */,
 				7B71F6191AFFC05300A48BB7 /* HamQTHLoginSettingViewController.m in Sources */,
+				7BC4433F1B02A5B400BF2865 /* Reachability.m in Sources */,
 				7B71F5E71AFFB46800A48BB7 /* main.m in Sources */,
 				7B71F6121AFFB77D00A48BB7 /* HamQTHLookupResultTableViewController.m in Sources */,
 				7B71F60C1AFFB73400A48BB7 /* HamQTHLookupViewController.m in Sources */,

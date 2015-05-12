@@ -8,6 +8,7 @@
 
 #import "HamQTHLookupResultTableViewController.h"
 #import "Macros.h"
+#import "Reachability.h"
 
 @interface HamQTHLookupResultTableViewController ()
 
@@ -25,68 +26,92 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSUserDefaults *userSettings = [NSUserDefaults standardUserDefaults];
     
-    if([[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthUsernameKey"] & [[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthPasswordKey"]) {
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        NSLog(@"There is no internet connection");
         
-        lookupOutputArray = [[NSMutableArray alloc] init];
-        
-        if (![[[userSettings dictionaryRepresentation] allKeys] containsObject:@"sessionIdDateKey"]) {
-            NSDate *sessionIdDate = [NSDate date];
+        if (IS_OS_7_OR_EARLIER) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"There is no internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             
-            [self getSessionId];
+            [alertView show];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"There is no internet connection." preferredStyle:UIAlertControllerStyleAlert];
             
-            [userSettings setObject:sessionIdDate forKey:@"sessionIdDateKey"];
-            [userSettings synchronize];
+            UIAlertAction *ok= [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            }];
+            
+            [alert addAction:ok];
+            
+            [self presentViewController:alert animated:YES completion:nil];
         }
-        
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"HH:mm:ss"];
-        NSDate *sessionIdDate = [userSettings objectForKey:@"sessionIdDateKey"];
-        
-        NSTimeInterval timeOfTheSessionIdAsked = fabs([sessionIdDate timeIntervalSinceNow]);
-        NSTimeInterval validityOfTheSessionId = 60 * 60 * 1;
-        
-        if (timeOfTheSessionIdAsked > validityOfTheSessionId) {
-            [userSettings removeObjectForKey:@"sessionIdDateKey"];
-            [userSettings synchronize];
-            
-            [self getSessionId];
-            
-            [userSettings setObject:[NSDate date] forKey:@"sessionIdDateKey"];
-            [userSettings synchronize];
-        }
-        
-        sessionId = [userSettings stringForKey:@"hamQthSessionIdKey"];
-        
-        NSLog(@"New session ID in %.0fmin", 60 - (timeOfTheSessionIdAsked / 60));
-        NSLog(@"First session ID asked at %@",[formatter stringFromDate:sessionIdDate]);
-        NSLog(@"Session ID: %@", sessionId);
-        
-        NSString *urlString = [NSString stringWithFormat:@"http://www.hamqth.com/xml.php?id=%@&callsign=%@&prg=HamQTH-Lookup", sessionId, callsign];
-        
-        NSData *xmlData=[[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:urlString]];
-        
-        xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
-        xmlParser.delegate = self;
-        [xmlParser parse];
     } else {
-        if (![[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthUsernameKey"] || ![[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthPasswordKey"]) {
-            if (IS_OS_7_OR_EARLIER) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Enter your HamQTH Login Information in setting." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        NSLog(@"There is internet connection");
+        
+        NSUserDefaults *userSettings = [NSUserDefaults standardUserDefaults];
+        
+        if([[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthUsernameKey"] & [[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthPasswordKey"]) {
+            
+            lookupOutputArray = [[NSMutableArray alloc] init];
+            
+            if (![[[userSettings dictionaryRepresentation] allKeys] containsObject:@"sessionIdDateKey"]) {
+                NSDate *sessionIdDate = [NSDate date];
                 
-                [alertView show];
-            } else {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Enter your HamQTH Login Information in setting." preferredStyle:UIAlertControllerStyleAlert];
+                [self getSessionId];
                 
-                UIAlertAction *ok= [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                    [alert dismissViewControllerAnimated:YES completion:nil];
-                }];
+                [userSettings setObject:sessionIdDate forKey:@"sessionIdDateKey"];
+                [userSettings synchronize];
+            }
+            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"HH:mm:ss"];
+            NSDate *sessionIdDate = [userSettings objectForKey:@"sessionIdDateKey"];
+            
+            NSTimeInterval timeOfTheSessionIdAsked = fabs([sessionIdDate timeIntervalSinceNow]);
+            NSTimeInterval validityOfTheSessionId = 60 * 60 * 1;
+            
+            if (timeOfTheSessionIdAsked > validityOfTheSessionId) {
+                [userSettings removeObjectForKey:@"sessionIdDateKey"];
+                [userSettings synchronize];
                 
-                [alert addAction:ok];
+                [self getSessionId];
                 
-                [self presentViewController:alert animated:YES completion:nil];
+                [userSettings setObject:[NSDate date] forKey:@"sessionIdDateKey"];
+                [userSettings synchronize];
+            }
+            
+            sessionId = [userSettings stringForKey:@"hamQthSessionIdKey"];
+            
+            NSLog(@"New session ID in %.0fmin", 60 - (timeOfTheSessionIdAsked / 60));
+            NSLog(@"First session ID asked at %@",[formatter stringFromDate:sessionIdDate]);
+            NSLog(@"Session ID: %@", sessionId);
+            
+            NSString *urlString = [NSString stringWithFormat:@"http://www.hamqth.com/xml.php?id=%@&callsign=%@&prg=HamQTH-Lookup", sessionId, callsign];
+            
+            NSData *xmlData=[[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:urlString]];
+            
+            xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
+            xmlParser.delegate = self;
+            [xmlParser parse];
+        } else {
+            if (![[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthUsernameKey"] || ![[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthPasswordKey"]) {
+                if (IS_OS_7_OR_EARLIER) {
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Enter your HamQTH Login Information in setting." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                    
+                    [alertView show];
+                } else {
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Enter your HamQTH Login Information in setting." preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction *ok= [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                        [alert dismissViewControllerAnimated:YES completion:nil];
+                    }];
+                    
+                    [alert addAction:ok];
+                    
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
             }
         }
     }
