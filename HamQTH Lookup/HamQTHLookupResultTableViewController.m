@@ -7,7 +7,7 @@
 //
 
 #import "HamQTHLookupResultTableViewController.h"
-#import "Macros.h"
+//#import "Macros.h"
 #import "Reachability.h"
 
 @interface HamQTHLookupResultTableViewController ()
@@ -32,27 +32,21 @@
     if (networkStatus == NotReachable) {
         NSLog(@"There is no internet connection");
         
-        if (IS_OS_7_OR_EARLIER) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"There is no internet connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            
-            [alertView show];
-        } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"There is no internet connection." preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction *ok= [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                [alert dismissViewControllerAnimated:YES completion:nil];
-            }];
-            
-            [alert addAction:ok];
-            
-            [self presentViewController:alert animated:YES completion:nil];
-        }
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"There is no internet connection." preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok= [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     } else {
         NSLog(@"There is internet connection");
         
         NSUserDefaults *userSettings = [NSUserDefaults standardUserDefaults];
         
-        if([[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthUsernameKey"] & [[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthPasswordKey"]) {
+        if ([[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthUsernameKey"] & [[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthPasswordKey"]) {
             
             lookupOutputArray = [[NSMutableArray alloc] init];
             
@@ -97,21 +91,16 @@
             [xmlParser parse];
         } else {
             if (![[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthUsernameKey"] || ![[[userSettings dictionaryRepresentation] allKeys] containsObject:@"hamQthPasswordKey"]) {
-                if (IS_OS_7_OR_EARLIER) {
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Enter your HamQTH Login Information in setting." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                    
-                    [alertView show];
-                } else {
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Enter your HamQTH Login Information in setting." preferredStyle:UIAlertControllerStyleAlert];
-                    
-                    UIAlertAction *ok= [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                        [alert dismissViewControllerAnimated:YES completion:nil];
-                    }];
-                    
-                    [alert addAction:ok];
-                    
-                    [self presentViewController:alert animated:YES completion:nil];
-                }
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Enter your HamQTH Login Information in setting." preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *ok= [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                    [alert dismissViewControllerAnimated:YES completion:nil];
+                }];
+                
+                [alert addAction:ok];
+                
+                [self presentViewController:alert animated:YES completion:nil];
             }
         }
     }
@@ -325,23 +314,17 @@
         [lookupOutputArray addObject:hamQTH];
         hamQTH = nil;
         
-        if (IS_OS_7_OR_EARLIER) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:sessionError delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            
-            [alertView show];
-        } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:sessionError preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction *ok= [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                [alert dismissViewControllerAnimated:YES completion:nil];
-            }];
-            
-            [alert addAction:ok];
-            
-            [self presentViewController:alert animated:YES completion:nil];
-        }
-    }
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:sessionError preferredStyle:UIAlertControllerStyleAlert];
         
+        UIAlertAction *ok= [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
     nodeContent = nil;
     nodeContent = [[NSMutableString alloc] init];
 }
@@ -798,21 +781,15 @@
         
         [self presentViewController:mailComposeViewController animated:YES completion:nil];
     } else {
-        if (IS_OS_7_OR_EARLIER) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Email Account" message:@"You must set up an email account before you can send mail." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"No Email Account" message:@"You must set up an email account before you can send mail." preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             
-            [alertView show];
-        } else {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"No Email Account" message:@"You must set up an email account before you can send mail." preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                
-            }];
-            
-            [alertController addAction:okAction];
-            
-            [self presentViewController:alertController animated:YES completion:nil];
-        }
+        }];
+        
+        [alertController addAction:okAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
     }
 }
 
